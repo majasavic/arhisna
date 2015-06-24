@@ -36,7 +36,6 @@ $(document).ready(function(){
             };
             
             // Submit data to Madrill API!:
-
             $.ajax({
                 type: "POST",
                 url: "https://mandrillapp.com/api/1.0/messages/send.json",
@@ -57,7 +56,7 @@ $(document).ready(function(){
                     }
                 }
                 }).done(function(response) {
-                    console.log(response); // if you're into that sorta thing
+                    $('#contact_form').html("<h2 class='section-title font-alt mb-70 mb-sm-40'>Thank you!</h2>");
             });
             
         }
