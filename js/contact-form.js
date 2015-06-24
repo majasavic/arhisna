@@ -35,24 +35,30 @@ $(document).ready(function(){
                 'userMessage': user_message
             };
             
-            //Ajax post data to server
-            $.post('contact_me.php', post_data, function(response){
-            
-                //load json data from server and output message     
-                if (response.type == 'error') {
-                    output = '<div class="error">' + response.text + '</div>';
+            // Submit data to Madrill API!:
+
+            $.ajax({
+                type: "POST",
+                url: "https://mandrillapp.com/api/1.0/messages/send.json",
+                data: {
+                    'key': 'JQ1yLBQ59EIJSQBtdUCzmg',
+                    'message': {
+                    'from_email': post_data.userEmail,
+                    'to': [
+                      {
+                        'email': "knknpnkn@gmail.com",
+                        'name': "ArhiSna website",
+                        'type': "to"
+                      }
+                    ],
+                    'autotext': 'true',
+                    'subject': 'Contact from the site - ' + post_data.userName,
+                    'html': post_data.user_message
+                    }
                 }
-                else {
-                
-                    output = '<div class="success">' + response.text + '</div>';
-                    
-                    //reset values in all input fields
-                    $('#contact_form input').val('');
-                    $('#contact_form textarea').val('');
-                }
-                
-                $("#result").hide().html(output).slideDown();
-            }, 'json');
+                }).done(function(response) {
+                    console.log(response); // if you're into that sorta thing
+            });
             
         }
         
