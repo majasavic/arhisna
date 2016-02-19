@@ -1298,7 +1298,7 @@ a.btn-mod:focus{
     transition: all 0.27s cubic-bezier(0.000, 0.000, 0.580, 1.000);
 }
 .nav-logo-wrap .logo img{
-	max-height: 100%;
+	height: 100%;
 }
 .nav-logo-wrap .logo:before,
 .nav-logo-wrap .logo:after{
@@ -2686,9 +2686,7 @@ a.logo:hover{
 #portfolio-description {
   width:80%;
   max-width:1140px;
-  margin-top:25px;
-  margin-bottom: 525px;
-  margin:auto;
+  margin: 5% auto;
 }
 
 #portfolio-description h1{
@@ -2941,7 +2939,7 @@ margin: 0px;
 .work-navigation a{
 	display: block;
 	float: left;
-	width: 33.33333%;
+	width: 100%;
 	overflow: hidden;
 	vertical-align: middle;
 	text-decoration: none;
