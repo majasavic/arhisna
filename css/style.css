@@ -1,13 +1,4 @@
 @charset "utf-8";
-/*------------------------------------------------------------------
-[Master Stylesheet]
-
-Project:    Rhythm
-Version:    1.5
-Last change:    Line 4111
-Primary use:    MultiPurpose Template  
--------------------------------------------------------------------*/
-
 @import "font-awesome.min.css";
 @import "et-line.css";
 @import url(http://fonts.googleapis.com/css?family=Open+Sans:400italic,700italic,400,300,700);
@@ -2692,51 +2683,21 @@ a.logo:hover{
  */
 
 
-#port-cont {
+#portfolio-description {
   width:80%;
+  max-width:1140px;
   margin-top:25px;
+  margin-bottom: 525px;
   margin:auto;
 }
 
-#port-cont h2{
- text-transform: uppercase;
- font-size:25px;
+#portfolio-description h1{
  text-align: center;
 }
 
-#port-cont .description{  
-  width:100%;
-  font-size: 14px;
-  text-align: center;
-  color: #aaa;
-  line-height: 1.5;
-  padding-bottom:20px;
-  margin-top: 20px;
-  padding-left: 20px;
-}
-
-#port-cont .big-image {  
-  margin-top: 40px;
-  margin:auto;
-  width: 60%;
-}
-
-#port-cont .big-image img{  
-  margin:auto;
-}
-
-#port-cont .small-image {
-  width:60%;
-  margin:auto;
-  background-color: red;
-}
-
-#port-cont .small-image img{  
-  display:block;
-  margin-top: 20px;
-  margin-right: 5px;
-  float:left;
-  width: 50px;
+#portfolio-description p{
+padding: 4px 0px;
+margin: 0px;
 }
 
 
@@ -2790,6 +2751,7 @@ a.logo:hover{
 .work-img{
 	position: relative;
 	overflow: hidden;
+  margin:2px;
 }
 .work-img img{
 	width: 100%;
@@ -3183,9 +3145,9 @@ a.logo:hover{
    Post previews
    ============================== */
 
-.post-grid{
-    
+.post-grid{   
 }
+
 .post-prev-img{
     margin-bottom: 23px;
     position: relative;
@@ -3200,9 +3162,18 @@ a.logo:hover{
 .post-prev-img a:hover{
     opacity: .85;
 }
-.post-prev-img img{
-    width: 100%;
+
+.post-prev-cont {
+
+  margin-right: -4%;
 }
+.post-prev-img img{
+    width: 32%;
+    padding-right: 0.5%;
+    padding-bottom: 0.5%;
+    float: left;
+}
+
 .post-prev-title{
     margin-bottom: 6px;
     font-size: 15px;
