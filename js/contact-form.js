@@ -52,7 +52,7 @@ $(document).ready(function(){
                     ],
                     'autotext': 'true',
                     'subject': 'Contact from the site - ' + post_data.userName,
-                    'html': post_data.user_message
+                    'html': post_data.userMessage
                     }
                 }
                 }).done(function(response) {
