@@ -1279,7 +1279,8 @@ a.btn-mod:focus{
    ============================== */
 
 
-/* Logo (in navigation panel)*/
+/* 
+ (in navigation panel)*/
 
 .nav-logo-wrap{
 	float: left;
@@ -1300,10 +1301,17 @@ a.btn-mod:focus{
 .nav-logo-wrap .logo img{
 	height: 100%;
 }
+
+.nav-logo-wrap .logo img:hover{
+  opacity: 0.7;
+  filter: alpha(opacity=100); /* For IE8 and earlier */
+}
+
 .nav-logo-wrap .logo:before,
 .nav-logo-wrap .logo:after{
 	display: none;
 }
+
 .logo,
 a.logo:hover{
     font-family: Dosis, arial, sans-serif;
