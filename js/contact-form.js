@@ -34,6 +34,7 @@ $(document).ready(function(){
                 'userEmail': user_email,
                 'userMessage': user_message
             };
+/*
             
             // Submit data to Madrill API!:
             $.ajax({
@@ -58,7 +59,20 @@ $(document).ready(function(){
                 }).done(function(response) {
                     $('#contact_form').html("<h2 class='section-title font-alt mb-70 mb-sm-40'>Thank you!</h2>");
             });
-            
+*/
+            $.ajax({
+                url: "https://formspree.io/iva@blokovi.com",
+                method: "POST",
+                data: {
+                    'message': {
+                    'from_email': post_data.userEmail,
+                    'subject': 'Contact from the site - ' + post_data.userName,
+                    'html': post_data.userMessage
+                    }
+                }
+                dataType: "json"
+            }); 
+                        
         }
         
         return false;
