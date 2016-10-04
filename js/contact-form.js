@@ -69,7 +69,7 @@ $(document).ready(function(){
                     'subject': 'Contact from the site - ' + post_data.userName,
                     'html': post_data.userMessage
                     }
-                }
+                },
                 dataType: "json"
             }); 
                         
