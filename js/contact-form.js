@@ -38,7 +38,7 @@ $(document).ready(function(){
             
 
             $.ajax({
-                url: "https://formspree.io/iva@blokovi.com",
+                url: "https://formspree.io/knknpnkn@gmail.com",
                 method: "POST",
                 data: {
                     'message': {
