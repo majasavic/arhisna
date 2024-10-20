@@ -13,7 +13,7 @@
      Scripts initialization
      --------------------------------------------- */
     
-    $(window).load(function(){
+    $(function(){
         
         // Page loader
         $(".page-loader div").delay(0).fadeOut();
