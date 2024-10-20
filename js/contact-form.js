@@ -61,18 +61,28 @@ $(document).ready(function(){
             });
 */
             $.ajax({
-                url: "https://formspree.io/iva@blokovi.com",
+                url: "https://formspree.io/f/xeoqqbgn",
                 method: "POST",
                 data: {
-                    'message': {
-                    'from_email': post_data.userEmail,
-                    'subject': 'Contact from the site - ' + post_data.userName,
-                    'html': post_data.userMessage
-                    }
-                }
+                    'email-address': post_data.userEmail,
+                    'email-subject': 'Contact from the site - ' + post_data.userName,
+                    'message': post_data.userMessage
+                },
                 dataType: "json"
+            }).then(response => {
+                if (response.ok) {
+                    $('#contact_form').html("<h2 class='section-title font-alt mb-70 mb-sm-40'>Thank you!</h2>")
+                } else {
+                    response.json().then(data => {
+                        if (Object.hasOwn(data, 'errors')) {
+                            $('#contact_form').html(data["errors"].map(error => error["message"]).join(", "))
+                        } else {
+                            $('#contact_form').html("<h2 class='section-title font-alt mb-70 mb-sm-40'>Oops! There was a problem submitting your form.</h2>")
+                        }
+                    }
+                )
+                }
             }); 
-                        
         }
         
         return false;
