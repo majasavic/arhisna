@@ -37,26 +37,60 @@ $(document).ready(function(){
 
             
 
+/*
+            
+            // Submit data to Madrill API!:
             $.ajax({
-                url: "https://formspree.io/knknpnkn@gmail.com",
-                method: "POST",
+                type: "POST",
+                url: "https://mandrillapp.com/api/1.0/messages/send.json",
                 data: {
+                    'key': 'JQ1yLBQ59EIJSQBtdUCzmg',
                     'message': {
                     'from_email': post_data.userEmail,
+                    'to': [
+                      {
+                        'email': "knknpnkn@gmail.com",
+                        'name': "ArhiSna website",
+                        'type': "to"
+                      }
+                    ],
+                    'autotext': 'true',
                     'subject': 'Contact from the site - ' + post_data.userName,
                     'html': post_data.userMessage
                     }
-                },
-                dataType: "json"
+                }
                 }).done(function(response) {
                     $('#contact_form').html("<h2 class='section-title font-alt mb-70 mb-sm-40'>Thank you!</h2>");
             });
-                        
+*/
+    $.ajax({
+        url: "https://formspree.io/f/xeoqqbgn",
+        method: "POST",
+        data: {
+            'email-address': post_data.userEmail,
+            'email-subject': 'Contact from the site - ' + post_data.userName,
+            'message': post_data.userMessage
+        },
+        dataType: "json"
+    }).then(response => {
+        if (response.ok) {
+            $('#contact_form').html("<h2 class='section-title font-alt mb-70 mb-sm-40'>Thank you!</h2>")
+        } else {
+            response.json().then(data => {
+                if (Object.hasOwn(data, 'errors')) {
+                    $('#contact_form').html(data["errors"].map(error => error["message"]).join(", "))
+                } else {
+                    $('#contact_form').html("<h2 class='section-title font-alt mb-70 mb-sm-40'>Oops! There was a problem submitting your form.</h2>")
+                }
+            }
+        )
         }
-        
-        return false;
+    }); 
+    }
+
+    return false;
     });
-    
+        
     //reset previously set border colors and hide all message on .keyup()
     $("#contact_form input, #contact_form textarea").keyup(function(){
         $("#contact_form input, #contact_form textarea").css('border-color', '');
